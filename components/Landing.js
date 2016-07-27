@@ -9,16 +9,29 @@ function signUpClicked(){
   browserHistory.push('/signup');
 }
 
-function loginClicked(e){
-  e.preventDefault();
-  verifyUser()
+function loginClicked(){
+  //verifyUser()
   if(isAuthenticated){browserHistory.push('/game');}
   else {browserHistory.push('/signup');}
 }
 
 function verifyUser(){
-      //if($('#passWordLogin').val()) === 'password'){ isAuthenticated===true;}
-      console.log(document.getElementById('userNameInput').value);
+    var data={
+      username: $('#userNameInput').val(),
+      password: $('#passwordInput').val(),
+      };
+      console.log(data);
+    $.ajax({
+            type: "POST",
+            url: "/login",
+            data: data,
+          success: function(data)
+          {
+            isAuthenticated = data;
+          }
+      });
+
+
 }
 
 export default class Landing extends Component {

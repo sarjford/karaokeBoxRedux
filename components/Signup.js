@@ -7,38 +7,21 @@ function handlelogInButtonClick(){
 }
 
 function handleSignUpButtonClick(){
-
-  var formData = (({
-      'username': document.getElementById('userNameSignup').value,
-      'password': document.getElementById('passWordConfirm').value
-  }))
-  console.log(formData);
+  if($('#passWordConfirm').val() === $('#passWordSignup').val()){
+  var data={
+    username: $('#userNameSignup').val(),
+    password: $('#passWordConfirm').val(),
+    };
   $.ajax({
-      async: false,
-      cache: false,
-      type: 'post',
-      //dataType: 'application/json',  // json...just for example sake
-      data: formData,
-      url: 'http://localhost:3000/signup',
-      success: function (data) {
-          // retrieve a success/failure code from the server
-          if (data === '1') {  // server returns a "1" for success
-              // success!
-              console.log('successful signup')
-              // do whatever you need to do
-          } else {
-              // fail!
-              console.log('failed signup')
-          }
-      },
-      error: function (XMLHttpRequest, textStatus, errorThrown) {
-          // something went wrong with the request
-          console.log(XMLHttpRequest.responseText);
-      }
-
-  });
-
-
+          type: "POST",
+          url: "/signup",
+          data: data,
+        success: function()
+        {
+          browserHistory.push('/game');
+        }
+    });
+  }
 }
 
 export default class Signup extends Component {
@@ -47,14 +30,12 @@ export default class Signup extends Component {
         <div id='signUpContainer'>
           <div id='signUpBox'>
             <h1>Sign up!</h1>
-            <input id='userNameSignup' ref='user' type='text' placeholder='Singer Name'></input>
+            <input id='userNameSignup'  type='text' placeholder='Singer Name'></input>
             <input id='passWordSignup' type='password' placeholder='Password'></input>
             <input id='passWordConfirm' type='password' placeholder='Confirm Password'></input>
             <div id='signUpButton' onClick={handleSignUpButtonClick}>Sign Up</div>
             <div id='logInButton' onClick={handlelogInButtonClick}>I already have an account</div>
           </div>
-
-
         </div>
     )
   }
