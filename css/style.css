@@ -1,6 +1,55 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+.main {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+.login-container {
+  width: 350px;
+  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  top: 200px;
+}
 
+.login-header {
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: gray;
+}
 
-body div div{
+.btn {
+  background-color: #571B7E;
+  color: white;
+}
+.logo {
+  position: relative;
+  top: 100px;
+  height: 300px;
+}
+#LoginButton {
+  float: left;
+  width: 46%;
+}
+
+#signupButton {
+  float: right;
+  width: 46%;
+}
+
+.form-control {
+  margin-bottom: 20px;
+}
+.form {
+  width: 100%
+}
+
+/*body div div{
   border: 1px solid black;
 }
 
@@ -11,7 +60,7 @@ body div div{
 }
 
 #LoginContainer {
-  width: 100%;
+  width: 40%;
   height: 50%;
   bottom: 0;
   background-color: yellow;
@@ -253,4 +302,4 @@ header {
   10% {
     background-color: #EFFFFA;
   }
-}
+}*/

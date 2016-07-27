@@ -28,6 +28,7 @@
     "mongoose": "^4.5.7",
     "path": "^0.12.7",
     "react": "^0.14",
+    "react-bootstrap": "^0.30.0",
     "react-dom": "^0.14.0",
     "react-router": "^2.6.0",
     "vinyl-source-stream": "^1.1.0"

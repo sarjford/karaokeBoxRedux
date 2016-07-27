@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Router, Route, Link } from 'react-router'
 import { browserHistory } from 'react-router'
+// import { Button } from 'react-bootstrap';
 
 var isAuthenticated = true;
 
@@ -23,18 +24,22 @@ function verifyUser(){
 export default class Landing extends Component {
   render() {
     return (
-      <div className='login-container'>
+      <div className='main'>
+      <img className="logo" src="./images/KBLogo.png" />
+      <div className='well login-container'>
+      <div className='login-header'>LOG IN</div>
       <form className="enter-form" onSubmit={loginClicked}>
       <input id='userNameInput' className="form-control"
-            placeholder="Please enter name"
+            placeholder="Username"
             required />
       <input type='password' className="form-control"
-            placeholder="Please enter Password"
+            placeholder="Password"
             required />
-          <button id='LoginButton' type="submit" className="btn btn-primary" onClick={this.loginClicked}>Enter</button>
-      <button  id='signUpButton' className="btn btn-primary" onClick={signUpClicked}>Sign Up</button>
+          <button id='LoginButton' type="submit" className="btn" onClick={this.loginClicked}>ENTER</button>
+      <button id='signUpButton' className="btn" onClick={signUpClicked}>SIGN UP</button>
     </form>
     </div>
+  </div>
       // <div id='LoginContainer'>
       //   <div id='LoginBox'>
       //     <h1>Sign in</h1>
