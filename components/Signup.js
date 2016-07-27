@@ -8,17 +8,17 @@ function handlelogInButtonClick(){
 
 function handleSignUpButtonClick(){
 
-  var formData = (({
-      'username': document.getElementById('userNameSignup').value,
-      'password': document.getElementById('passWordConfirm').value
-  }))
-  console.log(formData);
+  var formData = {
+      'username': JSON.stringify(document.getElementById('userNameSignup').value),
+      'password': JSON.stringify(document.getElementById('passWordConfirm').value)
+  };
+  var formDataStr = JSON.stringify(formData);
   $.ajax({
       async: false,
       cache: false,
-      type: 'post',
-      //dataType: 'application/json',  // json...just for example sake
-      data: formData,
+      type: 'POST',
+      dataType: 'application/json',  // json...just for example sake
+      data: formDataStr,
       url: 'http://localhost:3000/signup',
       success: function (data) {
           // retrieve a success/failure code from the server

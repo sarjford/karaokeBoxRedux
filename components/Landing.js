@@ -23,29 +23,26 @@ function verifyUser(){
 export default class Landing extends Component {
   render() {
     return (
-      <div className='login-container'>
-      <form className="enter-form" onSubmit={loginClicked}>
-      <input id='userNameInput' className="form-control"
-            placeholder="Please enter name"
-            required />
-      <input type='password' className="form-control"
-            placeholder="Please enter Password"
-            required />
-          <button id='LoginButton' type="submit" className="btn btn-primary" onClick={this.loginClicked}>Enter</button>
-      <button  id='signUpButton' className="btn btn-primary" onClick={signUpClicked}>Sign Up</button>
-    </form>
+      <div id = 'fullLandingContainer'>
+        <div id='landingLogoContainer'>
+          <div id='landingLogo'>
+            <img src='../assets/images/KBLogoType.png'></img>
+            <img src='../assets/images/KBLogoNoWord.png'></img>
+          </div>
+        </div>
+        <div className='login-container'>
+        <form className="enter-form" onSubmit={loginClicked}>
+        <input id='userNameInput' className="form-control"
+              placeholder="Please enter name"
+              required />
+        <input type='password' className="form-control"
+              placeholder="Please enter Password"
+              required />
+            <button id='LoginButton' type="submit" className="btn btn-primary" onClick={this.loginClicked}>Enter</button>
+        <button  id='signUpButton' className="btn btn-primary" onClick={signUpClicked}>Sign Up</button>
+      </form>
+      </div>
     </div>
-      // <div id='LoginContainer'>
-      //   <div id='LoginBox'>
-      //     <h1>Sign in</h1>
-      //     <input id='userNameLogin' type='text' placeholder='Singer Name'></input>
-      //     <input id='passWordLogin' type='password' placeholder='Password'></input>
-      //     <div id='signUpButton' onClick={signUpClicked} >Sign Up</div>
-      //     <div id='logInButton' onClick={signUpClicked}>Log in</div>
-      //   </div>
-      //
-      //
-      // </div>
     )
   }
 }

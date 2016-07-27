@@ -4,16 +4,14 @@ var db = mongoose.connection;
 var Singer = require('../Database/Models/singerModel');
 //verifying
 db.on('error', console.error);
-db.once('open', function() {
-  console.log('Mongodb connected');
-});
+
 
 var dbMethods = {};
 
 
 //Mongodb CRUD Operation for HOSTS
 dbMethods.createNewSinger = function(req, res){
-  console.log(res);
+  console.log(req);
   singerData = req.body;
   var singerTemp = new Singer(singerData);
   singerTemp.save(function(err, singerData) {

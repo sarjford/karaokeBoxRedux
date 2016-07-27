@@ -10,11 +10,7 @@ app.get('/', function(req,res) {
   res.sendFile('/index.html');
 });
 
-app.post('/signup', function(req, res){
-  console.log('made a post')
-  res.status(200);
-  dbMethods.createNewSinger(req, res);
-})
+app.post('/signup', dbMethods.createNewSinger);
 
 app.get('/*', function(req,res) {
   res.status(404);
