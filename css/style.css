@@ -1,0 +1,256 @@
+
+
+body div div{
+  border: 1px solid black;
+}
+
+#App {
+  position: relative;
+  width: 833px;
+  height: 544px;
+}
+
+#LoginContainer {
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  background-color: yellow;
+}
+
+#LoginBox {
+  width: 300px;
+  height: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: grey;
+}
+
+html, body, h1, h2, h3, h4, ul, li, p, {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-bottom: 30px;
+  position: relative;
+}
+
+body > svg {
+  left: 25px;
+  position: absolute;
+  top: 288px;
+  width: 1050px;
+}
+
+header {
+  margin: 70px 0 30px;
+}
+
+.logo-mini {
+  display: none;
+  left: 330px;
+  position: absolute;
+  width: 60px;
+  transition: 0.3s all ease-in-out;
+}
+
+.logo {
+  width: 350px;
+  margin-bottom: 50px;
+}
+
+.logo-mini.active {
+  display: block;
+}
+
+.logo-text {
+  width: 600px;
+}
+
+.d3-container {
+  position: absolute;
+  left: 400px;
+  top: 200px;
+  z-index: 4;
+}
+
+.score {
+  color: #802392;
+  font-size: 40px;
+  font-weight: bold;
+  position: absolute;
+  right: -300px;
+  top: -115px;
+}
+
+.login-container {
+  position: relative;
+  z-index: 3;
+  animation: groove 5s infinite;
+}
+
+.toggle-view {
+  display: none;
+}
+
+.main-container {
+  padding: 0 25px;
+  text-align: center;
+  width: 1440px;
+}
+
+.enter-form {
+  margin: 0 auto;
+  width: 300px;
+  position: relative;
+}
+
+.enter-form .form-control {
+  display: inline-block;
+  margin-right: 5%;
+  width: 75%;
+}
+
+.enter-form .btn {
+  vertical-align: top;
+  width: 20%;
+}
+
+.toggle-container {
+  position: relative;
+  overflow: auto;
+}
+
+.welcome-message {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  float: left;
+  height: 500px;
+  width: 1050px;
+}
+
+.chatbox {
+  float: right;
+  width: 300px;
+}
+
+.chatbox button {
+  width: 100%;
+}
+
+.message-list {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  height: 400px;
+  list-style-type: none;
+  overflow: scroll;
+  padding-left: 0;
+  text-align: left;
+}
+
+.message {
+  color: #555;
+  font-size: 15px;
+  padding: 7px 6px;
+}
+
+.message:nth-child(even) {
+  background: #fff;
+}
+
+.message:nth-child(odd) {
+  background: #eee;
+}
+
+.users-avatar {
+  list-style-type: none;
+  margin-bottom: 10px;
+  overflow: auto;
+  padding-left: 0;
+}
+
+.users-avatar li {
+  background-color: #ccc;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  transition: 0.3s all ease-in-out;
+  width: 25%;
+}
+
+.users-avatar li:nth-child(n) {
+  background-color: #183A37;
+}
+
+.users-avatar li:nth-child(n+1) {
+  background-color: #499F68;
+}
+
+.users-avatar li:nth-child(n+2) {
+  background-color: #087CA7;
+}
+
+.users-avatar li:nth-child(n+3) {
+  background-color: #8C271E;
+}
+
+.users-avatar li:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+@-webkit-keyframes groove {
+  0% {
+    background-color: #EFFFFA;
+  }
+  15% {
+    background-color: #83C9F4;
+  }
+  30% {
+    background-color: #C4B7CB;
+  }
+  45% {
+    background-color: #F56476;
+  }
+  60% {
+    background-color: #F3EEC3;
+  }
+  80% {
+    background-color: #A997DF;
+  }
+  10% {
+    background-color: #EFFFFA;
+  }
+}
+
+@keyframes groove {
+  0% {
+    background-color: #EFFFFA;
+  }
+  15% {
+    background-color: #83C9F4;
+  }
+  30% {
+    background-color: #C4B7CB;
+  }
+  45% {
+    background-color: #F56476;
+  }
+  60% {
+    background-color: #F3EEC3;
+  }
+  80% {
+    background-color: #A997DF;
+  }
+  10% {
+    background-color: #EFFFFA;
+  }
+}
