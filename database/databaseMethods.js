@@ -11,20 +11,20 @@ var dbMethods = {};
 
 //Mongodb CRUD Operation for HOSTS
 dbMethods.createNewSinger = function(req, res){
-  console.log(req);
   singerData = req.body;
   var singerTemp = new Singer(singerData);
   singerTemp.save(function(err, singerData) {
-    if (err) return console.error('Error! ' + err);
+    if (err) return console.log('erorr at create', err.code);
     console.dir('saved!');
   });
 }
 
 
-dbMethods.verifyHost = function(singerNameInput, singerPasswordInput) {
-
+dbMethods.verifySinger = function(req, res) {
+    var singerNameInput = req.body.username;
+    var singerPasswordInput = req.body.password;
     // fetch user and test password verification
-    Host.findOne({ username: singerNameInput}, function(err, user) {
+    Singer.findOne({ username: singerNameInput}, function(err, user) {
         if (err) throw err;
 
         // test a matching password

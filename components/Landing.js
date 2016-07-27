@@ -8,16 +8,29 @@ function signUpClicked(){
   browserHistory.push('/signup');
 }
 
-function loginClicked(e){
-  e.preventDefault();
+function loginClicked(){
   verifyUser()
   if(isAuthenticated){browserHistory.push('/game');}
   else {browserHistory.push('/signup');}
 }
 
 function verifyUser(){
-      //if($('#passWordLogin').val()) === 'password'){ isAuthenticated===true;}
-      console.log(document.getElementById('userNameInput').value);
+    var data={
+      username: $('#userNameInput').val(),
+      password: $('#passwordInput').val(),
+      };
+      console.log(data);
+    $.ajax({
+            type: "POST",
+            url: "/login",
+            data: data,
+          success: function(data)
+          {
+            isAuthenticated = data;
+          }
+      });
+
+
 }
 
 export default class Landing extends Component {
@@ -35,7 +48,7 @@ export default class Landing extends Component {
         <input id='userNameInput' className="form-control"
               placeholder="Please enter name"
               required />
-        <input type='password' className="form-control"
+            <input type='password' id='passwordInput' className="form-control"
               placeholder="Please enter Password"
               required />
             <button id='LoginButton' type="submit" className="btn btn-primary" onClick={this.loginClicked}>Enter</button>
