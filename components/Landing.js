@@ -9,7 +9,7 @@ function signUpClicked(){
 }
 
 function loginClicked(){
-  verifyUser()
+  //verifyUser()
   if(isAuthenticated){browserHistory.push('/game');}
   else {browserHistory.push('/signup');}
 }
